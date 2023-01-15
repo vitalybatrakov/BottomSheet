@@ -1,4 +1,4 @@
-# iOSBottomSheet
+# BottomSheet for iOS
 iOS 13+
 Simple and neat BottomSheet for iOS using UIKit custom transition.
 Automatically calculates the bottom sheet height depending on the content size.

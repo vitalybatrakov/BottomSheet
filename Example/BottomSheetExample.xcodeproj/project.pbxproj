@@ -7,30 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC46DDDF29747CFA0012DDF2 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = BC46DDDE29747CFA0012DDF2 /* BottomSheet */; };
 		BCA34AD42938FE8400AA8362 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA34AD32938FE8400AA8362 /* AppDelegate.swift */; };
 		BCA34AD82938FE8400AA8362 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA34AD72938FE8400AA8362 /* ViewController.swift */; };
 		BCA34ADB2938FE8400AA8362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA34AD92938FE8400AA8362 /* Main.storyboard */; };
 		BCA34ADD2938FE8500AA8362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA34ADC2938FE8500AA8362 /* Assets.xcassets */; };
 		BCA34AE02938FE8500AA8362 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA34ADE2938FE8500AA8362 /* LaunchScreen.storyboard */; };
-		BCA34AE92938FFB000AA8362 /* BottomSheetConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA34AE82938FFB000AA8362 /* BottomSheetConfiguration.swift */; };
-		BCA34AEB2939030000AA8362 /* BottomSheetTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA34AEA2939030000AA8362 /* BottomSheetTransitioningDelegate.swift */; };
-		BCA34AED293903BF00AA8362 /* BottomSheetTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA34AEC293903BF00AA8362 /* BottomSheetTransition.swift */; };
-		BCA34AEF2939060D00AA8362 /* BottomSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA34AEE2939060D00AA8362 /* BottomSheetPresentationController.swift */; };
 		BCA34AF2293A5ECD00AA8362 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA34AF1293A5ECD00AA8362 /* ExampleViewController.swift */; };
 		BCA34AF5293E469D00AA8362 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BCA34AF4293E469D00AA8362 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC46DDE129747F9D0012DDF2 /* BottomSheet */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BottomSheet; path = ..; sourceTree = "<group>"; };
 		BCA34AD02938FE8400AA8362 /* BottomSheetExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomSheetExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA34AD32938FE8400AA8362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCA34AD72938FE8400AA8362 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BCA34ADA2938FE8400AA8362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCA34ADC2938FE8500AA8362 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCA34ADF2938FE8500AA8362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BCA34AE82938FFB000AA8362 /* BottomSheetConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetConfiguration.swift; sourceTree = "<group>"; };
-		BCA34AEA2939030000AA8362 /* BottomSheetTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetTransitioningDelegate.swift; sourceTree = "<group>"; };
-		BCA34AEC293903BF00AA8362 /* BottomSheetTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetTransition.swift; sourceTree = "<group>"; };
-		BCA34AEE2939060D00AA8362 /* BottomSheetPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPresentationController.swift; sourceTree = "<group>"; };
 		BCA34AF1293A5ECD00AA8362 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -40,17 +34,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCA34AF5293E469D00AA8362 /* SnapKit in Frameworks */,
+				BC46DDDF29747CFA0012DDF2 /* BottomSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC46DDD829747AD20012DDF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC46DDE029747F9D0012DDF2 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				BC46DDE129747F9D0012DDF2 /* BottomSheet */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		BCA34AC72938FE8400AA8362 = {
 			isa = PBXGroup;
 			children = (
+				BC46DDE029747F9D0012DDF2 /* Packages */,
 				BCA34AD22938FE8400AA8362 /* BottomSheetExample */,
 				BCA34AD12938FE8400AA8362 /* Products */,
+				BC46DDD829747AD20012DDF2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				BCA34AF0293A5DD200AA8362 /* Example */,
-				BCA34AE72938FF9800AA8362 /* BottomSheet */,
 				BCA34AD32938FE8400AA8362 /* AppDelegate.swift */,
 				BCA34AD72938FE8400AA8362 /* ViewController.swift */,
 				BCA34AD92938FE8400AA8362 /* Main.storyboard */,
@@ -74,17 +85,6 @@
 				BCA34ADE2938FE8500AA8362 /* LaunchScreen.storyboard */,
 			);
 			path = BottomSheetExample;
-			sourceTree = "<group>";
-		};
-		BCA34AE72938FF9800AA8362 /* BottomSheet */ = {
-			isa = PBXGroup;
-			children = (
-				BCA34AE82938FFB000AA8362 /* BottomSheetConfiguration.swift */,
-				BCA34AEA2939030000AA8362 /* BottomSheetTransitioningDelegate.swift */,
-				BCA34AEC293903BF00AA8362 /* BottomSheetTransition.swift */,
-				BCA34AEE2939060D00AA8362 /* BottomSheetPresentationController.swift */,
-			);
-			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 		BCA34AF0293A5DD200AA8362 /* Example */ = {
@@ -113,6 +113,7 @@
 			name = BottomSheetExample;
 			packageProductDependencies = (
 				BCA34AF4293E469D00AA8362 /* SnapKit */,
+				BC46DDDE29747CFA0012DDF2 /* BottomSheet */,
 			);
 			productName = BottomSheetExample;
 			productReference = BCA34AD02938FE8400AA8362 /* BottomSheetExample.app */;
@@ -174,11 +175,7 @@
 			files = (
 				BCA34AF2293A5ECD00AA8362 /* ExampleViewController.swift in Sources */,
 				BCA34AD82938FE8400AA8362 /* ViewController.swift in Sources */,
-				BCA34AEB2939030000AA8362 /* BottomSheetTransitioningDelegate.swift in Sources */,
-				BCA34AEF2939060D00AA8362 /* BottomSheetPresentationController.swift in Sources */,
 				BCA34AD42938FE8400AA8362 /* AppDelegate.swift in Sources */,
-				BCA34AE92938FFB000AA8362 /* BottomSheetConfiguration.swift in Sources */,
-				BCA34AED293903BF00AA8362 /* BottomSheetTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +402,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BC46DDDE29747CFA0012DDF2 /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BottomSheet;
+		};
 		BCA34AF4293E469D00AA8362 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BCA34AF3293E469D00AA8362 /* XCRemoteSwiftPackageReference "SnapKit" */;
