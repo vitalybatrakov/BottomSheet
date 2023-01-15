@@ -5,13 +5,24 @@ Automatically calculates the bottom sheet height depending on the content size.
 Easy to use:
 ```swift
  let vc = ExampleViewController()
+ let delegate = BottomSheetTransitioningDelegate(configuration: .default)
  vc.modalPresentationStyle = .custom
- vc.transitioningDelegate = delegate
+ vc.transitioningDelegate = delegate // don't forget to retain the delegate (transitioningDelegate is weak)
  present(vc, animated: true)
 ```
 
-It doesn’t support yet:
-========
+### Swift Package Manager (SPM)
+
+Add the following to your Package.swift
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/vitalybatrakov/BottomSheet.git", branch: "main")
+]
+```
+
+### It doesn’t support yet:
+
 - Content scrolling if presented view controller's content height bigger that screen height;
 - Using navigation (navigation controller) inside the bottom sheet.
 
