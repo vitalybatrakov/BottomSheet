@@ -17,7 +17,7 @@ final class BottomSheetPresentationController: UIPresentationController {
     }()
     
     private lazy var overlayView: UIView = {
-        let view = UIView()
+        let view = OverlayView(presentingView: presentingViewController.view)
         view.backgroundColor = configuration.overlayColor
         if configuration.tapToDismissEnabled {
             let tapGR = UITapGestureRecognizer(target: self,
