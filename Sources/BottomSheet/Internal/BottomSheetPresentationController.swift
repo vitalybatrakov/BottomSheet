@@ -40,6 +40,8 @@ final class BottomSheetPresentationController: UIPresentationController {
     }
     
     private let configuration: BottomSheetConfiguration
+    private let keyboardObserver = KeyboardObserver()
+    private var isShowingKeyboard = false
     
     // MARK: Init
     
@@ -50,6 +52,22 @@ final class BottomSheetPresentationController: UIPresentationController {
     ) {
         self.configuration = configuration
         super.init(presentedViewController: presentedViewController, presenting: presenting)
+        
+        setupKeyboardObserver()
+    }
+    
+    private func setupKeyboardObserver() {
+        keyboardObserver.subscribe { [weak self] keyboardHeight in
+            guard let self else { return }
+            self.isShowingKeyboard = true
+            UIView.animate(withDuration: 0.25) {
+                self.presentedView?.frame.origin.y -= keyboardHeight
+            }
+        } onKeyboardHide: { [weak self] in
+            guard let self else { return }
+            self.isShowingKeyboard = false
+            self.presentedView?.frame = self.frameOfPresentedViewInContainerView
+        }
     }
   
     // MARK: UIPresentationController
@@ -179,7 +197,10 @@ final class BottomSheetPresentationController: UIPresentationController {
     
     @objc
     private func pannedPresentedView(_ recognizer: UIPanGestureRecognizer) {
-        guard let presentedView = presentedView else {
+        guard
+            let presentedView = presentedView,
+            !isShowingKeyboard
+        else {
             return
         }
         switch recognizer.state {

@@ -1,13 +1,20 @@
 import SnapKit
 import UIKit
 
-final class ExampleViewController: UIViewController {
+final class ExampleViewController: UIViewController, UITextFieldDelegate {
     
     private let titleLabel: UILabel = {
         let title = UILabel()
         title.font = .preferredFont(forTextStyle: .largeTitle, compatibleWith: nil)
         title.text = "Title"
         return title
+    }()
+    
+    private let textField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Enter text"
+        textField.borderStyle = .roundedRect
+        return textField
     }()
     
     private let subtitleLabel: UILabel = {
@@ -39,6 +46,8 @@ final class ExampleViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         
+        textField.delegate = self
+        
         setupLayout()
     }
     
@@ -50,5 +59,11 @@ final class ExampleViewController: UIViewController {
         stack.addArrangedSubview(titleLabel)
         stack.addArrangedSubview(subtitleLabel)
         stack.addArrangedSubview(descriptionLabel)
+        stack.addArrangedSubview(textField)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return false
     }
 }
