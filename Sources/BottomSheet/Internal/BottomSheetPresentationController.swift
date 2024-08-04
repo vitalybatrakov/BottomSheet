@@ -13,6 +13,7 @@ final class BottomSheetPresentationController: UIPresentationController {
         let view = UIView()
         view.bounds.size = CGSize(width: 32, height: 4)
         view.backgroundColor = .systemFill
+        view.layer.cornerRadius = view.frame.height / 2
         return view
     }()
     
@@ -88,7 +89,9 @@ final class BottomSheetPresentationController: UIPresentationController {
         super.presentationTransitionWillBegin()
         
         containerView?.addSubview(overlayView)
-        presentedView?.addSubview(pullBarView)
+        if configuration.showPullBar {
+            presentedView?.addSubview(pullBarView)
+        }
         
         overlayView.alpha = 0
         
@@ -102,7 +105,7 @@ final class BottomSheetPresentationController: UIPresentationController {
     override func containerViewDidLayoutSubviews() {
         super.containerViewDidLayoutSubviews()
         
-        setupLayout()
+        setupSubviews()
         setupPresentedViewInteraction()
     }
     
@@ -118,19 +121,39 @@ final class BottomSheetPresentationController: UIPresentationController {
     
     // MARK: Private methods
 
-    private func setupLayout() {
+    private func setupSubviews() {
+        setupPresentedView()
+        setupOverlayLayout()
+        setupPullBarLayout()
+    }
+    
+    private func setupPresentedView() {
+        guard let presentedView = presentedView else {
+            return
+        }
+        presentedView.layer.cornerCurve = .continuous
+        presentedView.layer.maskedCorners = [
+            .layerMinXMinYCorner,
+            .layerMaxXMinYCorner
+        ]
+    }
+    
+    private func setupOverlayLayout() {
+        guard let containerView = containerView else {
+            return
+        }
+        overlayView.frame = containerView.bounds
+    }
+    
+    private func setupPullBarLayout() {
         guard
-            let containerView = containerView,
+            configuration.showPullBar,
             let presentedView = presentedView
         else {
             return
         }
-        overlayView.frame = containerView.bounds
         pullBarView.frame.origin.y = 8
         pullBarView.center.x = presentedView.center.x
-        pullBarView.layer.cornerRadius = pullBarView.frame.height / 2
-        presentedView.layer.cornerCurve = .continuous
-        presentedView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         presentedViewController.additionalSafeAreaInsets.top = pullBarView.frame.maxY
     }
     

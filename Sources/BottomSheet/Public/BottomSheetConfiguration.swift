@@ -2,8 +2,6 @@ import UIKit
 
 public struct BottomSheetConfiguration {
     
-    // MARK: Internal properties
-    
     public let showPullBar: Bool
     public let tapToDismissEnabled: Bool
     public let panToDismissEnaled: Bool
