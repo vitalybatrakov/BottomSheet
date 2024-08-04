@@ -4,7 +4,7 @@ public struct BottomSheetConfiguration {
     
     public let showPullBar: Bool
     public let tapToDismissEnabled: Bool
-    public let panToDismissEnaled: Bool
+    public let panToDismissEnabled: Bool
     public let cornerRadius: CGFloat
     public let overlayColor: UIColor
     
@@ -22,7 +22,7 @@ public struct BottomSheetConfiguration {
     
     public init(showPullBar: Bool,
                 tapToDismissEnabled: Bool,
-                panToDismissEnaled: Bool,
+                panToDismissEnabled: Bool,
                 cornerRadius: CGFloat,
                 overlayColor: UIColor,
                 animationDuration: TimeInterval,
@@ -30,7 +30,7 @@ public struct BottomSheetConfiguration {
                 dismissThreshold: CGFloat) {
         self.showPullBar = showPullBar
         self.tapToDismissEnabled = tapToDismissEnabled
-        self.panToDismissEnaled = panToDismissEnaled
+        self.panToDismissEnabled = panToDismissEnabled
         self.cornerRadius = cornerRadius
         self.overlayColor = overlayColor
         self.animationDuration = animationDuration
@@ -43,7 +43,7 @@ public struct BottomSheetConfiguration {
     public static let `default` = BottomSheetConfiguration(
         showPullBar: true,
         tapToDismissEnabled: true,
-        panToDismissEnaled: true,
+        panToDismissEnabled: true,
         cornerRadius: 16,
         overlayColor: .black.withAlphaComponent(0.3),
         animationDuration: 0.5,

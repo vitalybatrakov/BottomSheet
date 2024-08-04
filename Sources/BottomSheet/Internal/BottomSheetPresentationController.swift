@@ -158,7 +158,12 @@ final class BottomSheetPresentationController: UIPresentationController {
     }
     
     private func setupPresentedViewInteraction() {
-        guard let presentedView = presentedView else { return }
+        guard
+            configuration.panToDismissEnabled,
+            let presentedView = presentedView
+        else {
+            return
+        }
         presentedView.addGestureRecognizer(panGesture)
     }
     
