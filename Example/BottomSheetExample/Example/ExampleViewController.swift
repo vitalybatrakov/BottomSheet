@@ -45,7 +45,8 @@ final class ExampleViewController: UIViewController {
     private func setupLayout() {
         view.addSubview(stack)
         stack.snp.makeConstraints {
-            $0.edges.equalToSuperview().inset(16)
+            $0.top.leading.trailing.equalToSuperview().inset(16)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         stack.addArrangedSubview(titleLabel)
         stack.addArrangedSubview(subtitleLabel)
